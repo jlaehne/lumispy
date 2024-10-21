@@ -90,8 +90,8 @@ function:
 
 .. code-block:: python
 
-    >>> import hyperspy.api as hs
-    >>> hs.print_known_signal_types()
+    import hyperspy.api as hs
+    hs.print_known_signal_types()
 
 The different subclasses are characterized by the ``signal_type`` metadata
 attribute. Some additional properties are summarized in the table below.

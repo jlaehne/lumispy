@@ -41,8 +41,8 @@ index of air, see also [Pfueller]_.
 
 .. code-block:: python
 
-    >>> s2 = s.to_eV(inplace=False)
-    >>> s.to_eV()
+    s2 = s.to_eV(inplace=False)
+    s.to_eV()
 
 .. Note::
 
@@ -73,10 +73,10 @@ TODO: Automatically read laser wavelength from metadata if given there.
 
 .. code-block:: python
 
-    >>> s2 = s.to_invcm(inplace=False)
-    >>> s.to_invcm()
-    >>> s2 = s.to_raman_shift(inplace=False, laser=325)
-    >>> s.to_raman_shift(laser=325)
+    s2 = s.to_invcm(inplace=False)
+    s.to_invcm()
+    s2 = s.to_raman_shift(inplace=False, laser=325)
+    s.to_raman_shift(laser=325)
 
 
 .. _jacobian:

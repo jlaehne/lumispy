@@ -28,7 +28,7 @@ Otherwise, the appropriate parameter has to be passed to the function.
 
 .. code-block:: python
 
-    >>> scaled = s.scale_by_exposure(integration_time=0.5, inplace=True)
+    scaled = s.scale_by_exposure(integration_time=0.5, inplace=True)
 
 **Normalization** is performed for the pixel with maximum intensity, Alternatively,
 the parameter ``pos`` in calibrated units of the signal axis can be given to
@@ -38,12 +38,14 @@ analysis (therefore the default is ``inplace=False``).
 
 .. code-block:: python
 
-    >>> s.normalize(pos=450)
+    s.normalize(pos=450)
+
 
 .. _peak_props:
 
 Peak positions and properties
 =============================
+
 
 .. _find_peaks:
 
@@ -77,8 +79,9 @@ All of these functions can be performed for a subset of the dataset:
 
 .. code-block:: python
 
-    >>> peaks = s.find_peaks1D_ohaver()
-    >>> peaks = s.isig[100:-100].find_peaks1D_ohaver()
+    peaks = s.find_peaks1D_ohaver()
+    peaks = s.isig[100:-100].find_peaks1D_ohaver()
+
 
 .. _peak_width:
 
@@ -93,8 +96,8 @@ default value ``factor=0.5`` returns the full width at half maximum (FWHM).
 
 .. code-block:: python
 
-    >>> s.remove_background()
-    >>> width = s.estimate_peak_width(factor=0.3)
+    s.remove_background()
+    width = s.estimate_peak_width(factor=0.3)
 
 
 .. _centroid:
@@ -126,19 +129,11 @@ with the `kwargs` of :external:class:`scipy.interpolate.interp1d` function.
 
 .. code-block:: python
 
-    >>> s = lum.signals.LumiSpectrum([[[1, 2, 3, 2, 1, 0]]*2]*3)
-    >>> s
-    <LumiSpectrum, title: , dimensions: (2, 3|6)>
-
-    >>> ax = s.axes_manager.signal_axes[0]
-    >>> ax.offset = 200
-    >>> ax.scale = 100
-
-    >>> com = s.centroid()
-    >>> com
-    <Signal2D, title: Centroid map, dimensions: (|2, 3)>
-    >>> com.data[0,0] 
-    400.0
+    s = lum.signals.LumiSpectrum([[[1, 2, 3, 2, 1, 0]]*2]*3)
+    s.axes_manager.signal_axes.offset = 200
+    s.axes_manager.signal_axes.scale = 100
+    
+    com = s.centroid()
 
 .. Note::
 
@@ -153,6 +148,7 @@ with the `kwargs` of :external:class:`scipy.interpolate.interp1d` function.
     wavelength to the :ref:`energy axis <energy_axis>` prior to determining
     the centroid to determine the true emission energy.
     See e.g. [Wang]_ and [Mooney]_.
+
 
 Signal statistics and analytical operations
 ===========================================
@@ -181,7 +177,7 @@ the operation and return a new signal containing the result:
 
 .. code-block:: python
 
-    >>> area = s.integrate1D(axis=0)
+    area = s.integrate1D(axis=0)
 
 
 .. _remove_negative:
@@ -197,7 +193,7 @@ The default operational mode is ``inplace=False`` (a new signal object is return
 
 .. code-block:: python
 
-    >>> s2 = s.remove_negative(0.1)
+    s2 = s.remove_negative(0.1)
 
 
 .. _crop_edges:
@@ -212,6 +208,6 @@ HyperSpy <signal.indexing>`.
 
 .. code-block:: python
 
-    >>> s.crop_edges(crop_px=2)
+    s.crop_edges(crop_px=2)
 
 *[TODO: add possibility to crop different amounts of pixels on different sides]*
