@@ -23,8 +23,7 @@ classifiers = [
     "Topic :: Software Development :: Libraries",
 ]
 dependencies = [
-    # lazy implementation relies on hyperspy-dev
-    "hyperspy @ git+https://github.com/hyperspy/hyperspy.git@RELEASE_next_patch",
+    "hyperspy>=2.4.0",
     "lazy-loader",
     "numpy",
     "scipy",

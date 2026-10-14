@@ -25,7 +25,7 @@ from . import (
 from ._version import __version__
 from .utils.axes import nm2eV, eV2nm, nm2invcm, invcm2nm, join_spectra
 from .utils.io import to_array, savetxt
-from .utils import crop_edges
+from .utils.signals import crop_edges
 
 __all__ = [
     "__version__",

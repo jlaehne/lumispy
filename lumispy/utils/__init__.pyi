@@ -28,5 +28,4 @@ from .axes import (
 
 from .signals import (
     com,
-    crop_edges,
 )
